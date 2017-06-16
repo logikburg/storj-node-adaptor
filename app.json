@@ -1,0 +1,8 @@
+{
+  "name": "nodejs storj adaptor",
+  "description": "adaptor implemenation to use Storj render images in browser front-end",
+  "repository": "https://github.com/logikburg/storj-node-adaptor",
+  "logo": "https://storj.io/img/storj-logo.jpg",
+  "keywords": ["storj", "adaptor", "node"],
+  "image": "heroku/nodejs"
+}

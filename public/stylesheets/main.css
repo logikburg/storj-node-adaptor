@@ -1,0 +1,98 @@
+.jumbotron {
+    background: #fff;
+    padding-bottom: 1em;
+}
+.jumbotron .btn {
+    border: 0;
+    padding: 1em 2em;
+}
+.jumbotron .btn-primary {
+    background: #2683ff;
+}
+.jumbotron .btn-primary:hover {
+    background: #173AE8;
+}
+.jumbotron h1 {
+    font-size: 42px;
+    font-weight: bold;
+}
+.jumbotron p {
+    max-width: 65%;
+    font-size: 18px;
+    margin: 1em auto 2em;
+}
+.navbar + .jumbotron {
+    margin-top: -20px;
+}
+.jumbotron .lang-logo {
+    display: block;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+.jumbotron .lang-logo img {
+    max-width: 100%;
+}
+.jumbotron .alert {
+    margin: 0 auto 3em;
+}
+@media (max-width: 767px) {
+  .jumbotron p {
+    max-width: 80%;
+  }
+}
+
+.spacer {
+  margin-top: 20px;
+}
+
+/* Make all buttons 200px */
+.storj-methods button {
+  width: 250px;
+}
+
+.btn-lg {
+  margin: 10px 0;
+}
+
+.sub-list {
+  margin-right: 10px;
+}
+
+.grumpy-holder {
+  text-align: center;
+}
+
+.grumpy-pic {
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+}
+
+.keypair {
+  margin-top: 20px;
+}
+
+.credentials--username, .credentials--password {
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+.bucket-create {
+  padding: 10px 0;
+}
+
+.bucket-btn--create {
+  margin-left: 25px;
+}
+
+.bucket-created {
+  margin-top: 10px;
+}
+
+.new-bucket-name {
+  width: 250px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
