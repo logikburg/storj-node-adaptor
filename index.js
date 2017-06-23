@@ -448,11 +448,6 @@ app.get('/:bucketId/:fname', function(req, res) {
             function(err, stream) {
                 if (err) {
                     console.log('error', err.message);
-                    res.writeHead(404, {
-                        "Content-Type": "text/plain"
-                    });
-                    res.write("404 Not Found\n");
-                    res.end();
                     return;
                 }
 
@@ -536,22 +531,6 @@ app.post('/files/upload/:bucketId', function(req, res) {
 
         // Step 4) Instantiate encrypter
         var encrypter = new storj.EncryptStream(filekey);
-        // Step 1b) Path of file
-        // var is = fs.createReadStream(req.file.path);
-        // var os = fs.createWriteStream('./public/grumpy.jpg');
-        // is.on('finish', function() {
-        //     console.log('Finished download');;
-        // }).on(
-        //     "close",
-        //     function handleCloseEvent() {
-        //         console.log("Request closed prematurely.");
-        //     }).on(
-        //     "error",
-        //     function error(err) {
-        //         console.log("error");
-        //     });
-
-        //is.pipe(os);
 
         // Step 5) Encrypt file
         fs.createReadStream(filepath)
@@ -584,13 +563,25 @@ app.post('/files/upload/:bucketId', function(req, res) {
                                 console.log('Temporary encrypted file deleted');
                             });
 
+                            fs.unlink(filepath, function(err) {
+                                if (err) {
+                                    return console.log(err);
+                                }
+                                console.log('Uploaded file deleted');
+                            });
+
                             console.log(`File ${filename} successfully uploaded to ${bucketId}`);
                             //res.status(200).send(file);
                         });
                 });
             });
 
+        var filePath = req.get('host') + "/" + bucketId + "/" + filename;
+
+        console.log(`Storj filePath : ${filePath}`);
+
         res.json({
+            file_path: filePath,
             error_code: 0,
             err_desc: null
         });
